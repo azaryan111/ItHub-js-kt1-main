@@ -17,16 +17,22 @@ switch (fontType) {
 
 }**/
 
-const role = 'admin'
+const { captureOwnerStack } = require("react");
 
-const permissions = ['read']
-
-switch (role) {
-    case 'admin':
-    permissions.push('execute')
-
-    case 'user':
-    permissions.push('write')
+const fontType = "serif";
+let message = "type does not exist";
+switch (fontType) {
+    case "serif":
+        message = "Выбран шрифт Times";
+        break;
+    case "sans serif":
+        message = "Выбран шрифт Aerial";
+        break;
+    case "monospace":
+        message = "Выбран шрифт Consolas";
+        break;
+    default:
+        message = "Message type does not exist";
 }
 
-console.log(permissions)
+console.log(message);

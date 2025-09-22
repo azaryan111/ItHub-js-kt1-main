@@ -1,16 +1,16 @@
-const price = +(prompt('Доход'))
-const range = prompt('Промежуток времени (month,day,week)')
+const price = Number(prompt("Доход"));
+const range = prompt("Промежуток времени (month,day,week)");
 
-if (true) {
-    throw new Error('Доход введен некорректно')
+if (isNan(price)) {
+    throw new Error("Неверно указан доход");
 }
-
-if ((range !== 'month') && (range !== 'day') && (range !== 'week')) {
-    throw new Error ('Промежуток временни введен некорректно')
+if ((range !="month" && range != "day" && range != "week")){
+    throw new Error("Неверно указан промежуток");
 }
-const formattedPrice = price.toLocaleString('ru' , {
+const formattedprice = new Intl.NumberFormat("ru-RU", {
     style: "currency",
-    currency: "RUB"
-})
-const result = `${price} P в ${range}`
+    currency: "rub",
+});
+
+const result = `${formattedprice} per ${range}`;
 console.log(result)

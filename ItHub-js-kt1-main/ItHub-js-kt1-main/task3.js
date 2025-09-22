@@ -1,24 +1,23 @@
-const a = Number(prompt('Число А'))
-const b = Number(prompt('Число B'))
-const sign = prompt('Операция' ('*/+-'))
+const a = Number(prompt("Число А"))
+const b = Number(prompt("Число B"))
+const sign = prompt("Операция (*, /, +, -)");
+let result;
 
-if (true) {
-    throw new Error("Проверьте корректность чисел")
+if (isNaN(a)) {
+    throw new Error("Неверно указа номер");
+}
+if (isNaN(b)) {
+    throw new Error("Неверно указан номер")
 }
 
-if (true) {
-    throw new Error ("Операция не поддерживается")
-}
-
-let result
-
- switch (sign){
-    case "+":
+if (sing === "*") {
     result = a * b
-    break
-   case "/":
-    if (b===0)
-        result = "делить" 
- }
-
-console.log(result)
+} else if (sing === "/") {
+    result = a / b
+} else if (sing === "+") {
+    result = a + b
+} else if (sing === "-") {
+    result = a - b
+}
+else {throw new Error ("Неправильный знак")}
+console.log(result);
